@@ -1,0 +1,5 @@
+Credentials cache: API:31949
+        Principal: tcardoza@42.US.ORG
+
+  Issued                Expires               Principal
+Jun 18 17:18:06 2018  Jun 19 03:18:06 2018  krbtgt/42.US.ORG@42.US.ORG
