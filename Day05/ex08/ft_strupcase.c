@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcardoza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/25 22:57:39 by tcardoza          #+#    #+#             */
-/*   Updated: 2018/06/26 11:45:23 by tcardoza         ###   ########.fr       */
+/*   Created: 2018/06/26 12:56:31 by tcardoza          #+#    #+#             */
+/*   Updated: 2018/06/26 12:56:41 by tcardoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putchar.c"
-#include "ft_putnbr.c"
-#include "ft_putstr.c"
-#include "ft_strcmp.c"
 
-int	main(void)
+char	*ft_strupcase(char *str)
 {
-	char str1[] = "asdg";
-	char str2[] = "asdf";
-	char str3[] = "A_";
-	ft_putnbr(ft_strcmp(str1, str2));
-	return (0);
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
+	}
+	return (str);
 }

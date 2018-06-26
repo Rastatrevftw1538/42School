@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcardoza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/25 22:57:39 by tcardoza          #+#    #+#             */
-/*   Updated: 2018/06/26 11:45:23 by tcardoza         ###   ########.fr       */
+/*   Created: 2018/06/26 12:14:17 by tcardoza          #+#    #+#             */
+/*   Updated: 2018/06/26 12:14:25 by tcardoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putchar.c"
-#include "ft_putnbr.c"
-#include "ft_putstr.c"
-#include "ft_strcmp.c"
+void	ft_putchar(char c);
 
-int	main(void)
+void	ft_putnbr(int nb)
 {
-	char str1[] = "asdg";
-	char str2[] = "asdf";
-	char str3[] = "A_";
-	ft_putnbr(ft_strcmp(str1, str2));
-	return (0);
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
 }
+
