@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util.h                                             :+:      :+:    :+:   */
+/*   btree_create_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcardoza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 12:24:02 by tcardoza          #+#    #+#             */
-/*   Updated: 2018/07/05 16:53:57 by tcardoza         ###   ########.fr       */
+/*   Created: 2018/07/06 06:51:25 by tcardoza          #+#    #+#             */
+/*   Updated: 2018/07/06 06:51:54 by tcardoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTIL_H
-#define UTIL_H
+#include "ft_btree.h"
 
-#define BUFFER_SIZE 4096
-void	ft_putchar(int out, char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int i);
-int		ft_strcmp(char *s1, char *s2);
-int		ft_strlen(char *str);
-char	*ft_strrev(char *str);
-void	ft_swap(int *a, int *b);
-void	ft_puterror(char *str);
-#endif
+t_btree	*btree_create_node(void *item)
+{
+	t_btree *tmp;
+
+	tmp = (t_btree*)malloc(sizeof(tmp));
+	tmp->item = item;
+	tmp->left = 0;
+	tmp->right = 0;
+	return (tmp);
+}
